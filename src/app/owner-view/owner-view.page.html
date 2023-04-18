@@ -1,0 +1,215 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet"> 
+
+<!-- <ion-header class="ion-no-border">
+  <ion-toolbar>
+    <div style="display: flex">
+      <ion-title class="ion-text-center">
+        <div style="font-family: 'Lobster', cursive; font-size: 30px; color: #3a1468; margin: 10px auto">
+          Cold Store <ion-icon name="storefront"></ion-icon>
+        </div>
+      </ion-title>
+      <ion-buttons slot="start">
+        <ion-menu-button menu="main-content" auto-hide="false">
+          <ion-icon slot="icon-only" name="menu"></ion-icon>
+        </ion-menu-button>
+      </ion-buttons>
+      <ion-menu-toggle auto-hide="false" menu="main-content">
+        <ion-button fill="clear" shape="round" slot="start">
+          <ion-icon slot="icon-only" name="menu"></ion-icon>
+        </ion-button>
+      </ion-menu-toggle>
+    </div>
+  </ion-toolbar>
+</ion-header> -->
+
+
+
+<ion-menu contentId="main-content">
+  <!-- <ion-header>
+    <ion-toolbar>
+      <ion-title>Menu Content</ion-title>
+    </ion-toolbar>
+  </ion-header> -->
+  <ion-content class="ion-padding">
+    <ion-item lines="none">
+      <ion-title class="ion-text-center">
+        <div style="font-family: 'Lobster', cursive; font-size: 30px; color: #3a1468; margin: 10px auto">
+          Cold Store <ion-icon name="storefront"></ion-icon>
+        </div>
+      </ion-title>
+    </ion-item>
+    <ion-item>
+      Store Owner
+    </ion-item>
+    <br>
+    <ion-item button>
+      <ion-icon slot="start" name="settings"></ion-icon>Settings
+    </ion-item>
+    <ion-item button routerLink="/credits" routerDirection="forward">
+      <ion-icon slot="start" name="people"></ion-icon>Credits
+    </ion-item>
+    <ion-item button (click)="logOut()">
+      <ion-icon slot="start" name="log-out"></ion-icon>Sign Out
+    </ion-item>
+  </ion-content>
+</ion-menu>
+
+<div class="ion-page" id="main-content">
+
+<ion-content>
+
+  <ion-toolbar>
+    <div style="display: flex">
+      <ion-title class="ion-text-center">
+        <div style="font-family: 'Lobster', cursive; font-size: 30px; color: #3a1468; margin: 10px auto">
+          Cold Store <ion-icon name="storefront"></ion-icon>
+        </div>
+      </ion-title>
+      <ion-buttons slot="start">
+        <ion-menu-button auto-hide="false">
+          <ion-icon slot="icon-only" name="menu"></ion-icon>
+        </ion-menu-button>
+      </ion-buttons>
+      <!-- <ion-menu-toggle auto-hide="false" menu="main-content">
+        <ion-button fill="clear" shape="round" slot="start">
+          <ion-icon slot="icon-only" name="menu"></ion-icon>
+        </ion-button>
+      </ion-menu-toggle> -->
+    </div>
+  </ion-toolbar>
+<!-- 
+  <br>
+  <ion-button fill="clear" shape="round">
+    <ion-icon slot="start" name="chevron-back"></ion-icon> Back
+  </ion-button> -->
+
+  <br>
+  <ion-item lines="none">
+    <ion-label style="font-size: 20px">Staff</ion-label>
+  </ion-item>
+  
+  <ion-slides style="width: 100%" mode="ios" pager="ios" scrollbar="ios">
+    <ion-slide>
+      <div style="display: flex; justify-content: space-around; width: 500px" align="center">
+        <ion-card button color="primary" style="width: 40%;" routerLink="/add-staff" routerDirection="forward">
+          <div style="margin-top: 25px;">
+            <ion-icon name="person-add-outline" style="font-size: 50px"></ion-icon><br>
+            <p>Add Staff</p>
+          </div>
+        </ion-card>
+        <ion-card button color="primary" style="width: 40%;" routerLink="/staff-list" routerDirection="forward">
+          <div style="margin-top: 25px;">
+            <ion-icon name="people-outline" style="font-size: 50px"></ion-icon><br>
+            <p>View Staff</p>
+          </div>
+        </ion-card>
+      </div>
+    </ion-slide>
+    <ion-slide>
+      <div style="display: flex; justify-content: space-around; width: 500px;" align="center">
+        <ion-card button color="primary" style="width: 40%;" routerLink="/owner-view-schedule" routerDirection="forward">
+          <div style="margin-top: 25px;">
+            <ion-icon name="calendar-clear-outline" style="font-size: 50px"></ion-icon><br>
+            <p>Manage Schedule</p>
+          </div>
+        </ion-card>
+        <ion-card button color="primary" style="width: 40%;" routerLink="/owner-trade-request" routerDirection="forward">
+          <div style="margin-top: 25px;">
+            <ion-icon name="time-outline" style="font-size: 50px"></ion-icon><br>
+            <p>Trade Shift Requests</p>
+          </div>
+          <ion-badge *ngIf="tradeRequestNumber != 0" style="position: absolute; top: 5px; right: 5px" color="danger" mode="ios">{{ tradeRequestNumber }}</ion-badge>
+        </ion-card>
+      </div>
+    </ion-slide>
+  </ion-slides>
+
+  <br>
+  <ion-item lines="none">
+    <ion-label style="font-size: 20px">Inventory</ion-label>
+  </ion-item>
+  
+  <ion-slides style="width: 100%" mode="ios" pager="ios" scrollbar="ios">
+    <ion-slide>
+      <div style="display: flex; justify-content: space-around; width: 500px" align="center">
+        <ion-card button color="primary" style="width: 40%;" routerLink="/add-item" routerDirection="forward">
+          <div style="margin-top: 25px;">
+            <ion-icon name="bag-add-outline" style="font-size: 50px"></ion-icon><br>
+            <p>Add Item</p>
+          </div>
+        </ion-card>
+        <ion-card button color="primary" style="width: 40%;" routerLink="/item-list" routerDirection="forward">
+          <div style="margin-top: 25px;">
+            <ion-icon name="bag-outline" style="font-size: 50px"></ion-icon><br>
+            <p>View Item</p>
+          </div>
+        </ion-card>
+      </div>
+    </ion-slide>
+    <ion-slide>
+      <div style="display: flex; justify-content: space-around; width: 500px;" align="center">
+        <ion-card button color="primary" style="width: 40%;" routerLink="/view-stock" routerDirection="forward">
+          <div style="margin-top: 25px;">
+            <ion-icon name="clipboard-outline" style="font-size: 50px"></ion-icon><br>
+            <p>View Existing Stock</p>
+          </div>
+        </ion-card>
+        <ion-card button color="primary" style="width: 40%;" routerLink="/owner-sales-report" routerDirection="forward">
+          <div style="margin-top: 25px;">
+            <ion-icon name="receipt-outline" style="font-size: 50px"></ion-icon><br>
+            <p>Sales Report</p>
+          </div>
+        </ion-card>
+      </div>
+    </ion-slide>
+  </ion-slides>
+
+  <br>
+  <ion-item lines="none">
+    <ion-label style="font-size: 20px">Orders</ion-label>
+  </ion-item>
+  
+  <ion-slides style="width: 100%" mode="ios" pager="ios" scrollbar="ios">
+    <ion-slide>
+      <div style="display: flex; justify-content: space-around; width: 500px" align="center">
+        <ion-card button color="primary" style="width: 40%;" routerLink="/add-supplier" routerDirection="forward">
+          <div style="margin-top: 25px;">
+            <ion-icon name="car-outline" style="font-size: 50px"></ion-icon><br>
+            <p>Add Supplier</p>
+          </div>
+        </ion-card>
+        <ion-card button color="primary" style="width: 40%;" routerLink="/supplier-list" routerDirection="forward">
+          <div style="margin-top: 25px;">
+            <ion-icon name="bicycle-outline" style="font-size: 50px"></ion-icon><br>
+            <p>View Supplier</p>
+          </div>
+        </ion-card>
+      </div>
+    </ion-slide>
+    <ion-slide>
+      <div style="display: flex; justify-content: space-around; width: 500px;" align="center">
+        <ion-card button color="primary" style="width: 40%;" (click)="makeOrder()">
+          <div style="margin-top: 25px;">
+            <ion-icon name="chatbubble-ellipses-outline" style="font-size: 50px"></ion-icon><br>
+            <p>Manage Orders</p>
+          </div>
+          <ion-badge *ngIf="shippedOrderCount != 0" style="position: absolute; top: 5px; right: 5px" color="danger" mode="ios">{{ shippedOrderCount }}</ion-badge>
+        </ion-card>
+        <ion-card button color="primary" style="width: 40%;" routerLink="/owner-order-history" routerDirection="forward">
+          <div style="margin-top: 25px;">
+            <ion-icon name="chatbubbles-outline" style="font-size: 50px"></ion-icon><br>
+            <p>Order History</p>
+          </div>
+        </ion-card>
+      </div>
+    </ion-slide>
+  </ion-slides>
+
+</ion-content>
+
+
+
+</div>
+

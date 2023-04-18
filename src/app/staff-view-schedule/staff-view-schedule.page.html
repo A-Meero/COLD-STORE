@@ -1,0 +1,187 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet"> 
+
+<!-- <ion-header class="ion-no-border">
+  <ion-toolbar>
+    <div style="display: flex">
+      <ion-title class="ion-text-center">
+        <div style="font-family: 'Lobster', cursive; font-size: 30px; color: #3a1468; margin: 10px auto">
+          Cold Store <ion-icon name="storefront"></ion-icon>
+        </div>
+      </ion-title>
+      <ion-buttons slot="start">
+        <ion-menu-button menu="main-content" auto-hide="false">
+          <ion-icon slot="icon-only" name="menu"></ion-icon>
+        </ion-menu-button>
+      </ion-buttons>
+      <ion-menu-toggle auto-hide="false" menu="main-content">
+        <ion-button fill="clear" shape="round" slot="start">
+          <ion-icon slot="icon-only" name="menu"></ion-icon>
+        </ion-button>
+      </ion-menu-toggle>
+    </div>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content>
+
+  <ion-toolbar>
+    <div style="display: flex">
+      <ion-title class="ion-text-center">
+        <div style="font-family: 'Lobster', cursive; font-size: 30px; color: #3a1468; margin: 10px auto">
+          Cold Store <ion-icon name="storefront"></ion-icon>
+        </div>
+      </ion-title>
+      <ion-button style="margin-top: 12px;" fill="clear" shape="round" routerLink="/employee-view" routerDirection="back">
+        <ion-icon slot="start" name="chevron-back"></ion-icon> Back
+      </ion-button>
+    </div>
+  </ion-toolbar>
+
+  <br><br>
+  <div>
+    <ion-title >View Schedule</ion-title><br><br>
+  </div>
+  
+  <div align="center">
+    <p style="margin-top: 10px; font-size: 15px; color: #5c13b4">View and edit employee schedules</p>
+    <p style="margin-top: 10px; font-size: 12px; color: maroon">Morning Shift: 8:00 AM to 4:00 PM</p>
+    <p style="margin-top: 10px; font-size: 12px; color: maroon">Night Shift: 4:00 PM to 12:00 AM</p>
+  </div>
+
+  <ion-segment [(ngModel)]="scheduleDay">
+    <ion-segment-button value="Sunday">
+      <ion-label>Sunday</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="Monday">
+      <ion-label>Monday</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="Tuesday">
+      <ion-label>Tuesday</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+  <ion-segment [(ngModel)]="scheduleDay">
+    <ion-segment-button value="Wednesday">
+      <ion-label>Wednesday</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="Thursday">
+      <ion-label>Thursday</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="Friday">
+      <ion-label>Friday</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="Saturday">
+      <ion-label>Saturday</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <div [ngSwitch]="scheduleDay">
+    <div *ngSwitchCase="'Sunday'">
+      <div align="center">
+        <ion-item>
+          <ion-label>Shift</ion-label>
+          <ion-label>Staff Name</ion-label>
+        </ion-item>
+        <div *ngFor="let element of FB.schedules | async">
+          <ion-item *ngIf=" element.day == 'Sunday' ">
+            <ion-label>{{ element.shift }}</ion-label>
+            <ion-label>{{ element.employeeName }}</ion-label>
+          </ion-item>
+        </div>
+      </div>
+    </div>
+     
+    <div *ngSwitchCase="'Monday'">
+      <div align="center">
+        <ion-item>
+          <ion-label>Shift</ion-label>
+          <ion-label>Staff Name</ion-label>
+        </ion-item>
+        <div *ngFor="let element of FB.schedules | async">
+          <ion-item *ngIf=" element.day == 'Monday' ">
+            <ion-label>{{ element.shift }}</ion-label>
+            <ion-label>{{ element.employeeName }}</ion-label>
+          </ion-item>
+        </div>
+      </div>
+    </div>
+
+    <div *ngSwitchCase="'Tuesday'">
+      <div align="center">
+        <ion-item>
+          <ion-label>Shift</ion-label>
+          <ion-label>Staff Name</ion-label>
+        </ion-item>
+        <div *ngFor="let element of FB.schedules | async">
+          <ion-item *ngIf=" element.day == 'Tuesday' ">
+            <ion-label>{{ element.shift }}</ion-label>
+            <ion-label>{{ element.employeeName }}</ion-label>
+          </ion-item>
+        </div>
+      </div>
+    </div>
+
+    <div *ngSwitchCase="'Wednesday'">
+      <div align="center">
+        <ion-item>
+          <ion-label>Shift</ion-label>
+          <ion-label>Staff Name</ion-label>
+        </ion-item>
+        <div *ngFor="let element of FB.schedules | async">
+          <ion-item *ngIf=" element.day == 'Wednesday' ">
+            <ion-label>{{ element.shift }}</ion-label>
+            <ion-label>{{ element.employeeName }}</ion-label>
+          </ion-item>
+        </div>
+      </div>
+    </div>
+    
+    <div *ngSwitchCase="'Thursday'">
+      <div align="center">
+        <ion-item>
+          <ion-label>Shift</ion-label>
+          <ion-label>Staff Name</ion-label>
+        </ion-item>
+        <div *ngFor="let element of FB.schedules | async">
+          <ion-item *ngIf=" element.day == 'Thursday' ">
+            <ion-label>{{ element.shift }}</ion-label>
+            <ion-label>{{ element.employeeName }}</ion-label>
+          </ion-item>
+        </div>
+      </div>
+    </div>
+
+    <div *ngSwitchCase="'Friday'">
+      <div align="center">
+        <ion-item>
+          <ion-label>Shift</ion-label>
+          <ion-label>Staff Name</ion-label>
+        </ion-item>
+        <div *ngFor="let element of FB.schedules | async">
+          <ion-item *ngIf=" element.day == 'Friday' ">
+            <ion-label>{{ element.shift }}</ion-label>
+            <ion-label>{{ element.employeeName }}</ion-label>
+          </ion-item>
+        </div>
+      </div>
+    </div>
+    
+    <div *ngSwitchCase="'Saturday'">
+      <div align="center">
+        <ion-item>
+          <ion-label>Shift</ion-label>
+          <ion-label>Staff Name</ion-label>
+        </ion-item>
+        <div *ngFor="let element of FB.schedules | async">
+          <ion-item *ngIf=" element.day == 'Saturday' ">
+            <ion-label>{{ element.shift }}</ion-label>
+            <ion-label>{{ element.employeeName }}</ion-label>
+          </ion-item>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</ion-content>

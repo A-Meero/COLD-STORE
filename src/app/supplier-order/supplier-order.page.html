@@ -1,0 +1,81 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet"> 
+
+<!-- <ion-header class="ion-no-border">
+  <ion-toolbar>
+    <div style="display: flex">
+      <ion-title class="ion-text-center">
+        <div style="font-family: 'Lobster', cursive; font-size: 30px; color: #3a1468; margin: 10px auto">
+          Cold Store <ion-icon name="storefront"></ion-icon>
+        </div>
+      </ion-title>
+      <ion-buttons slot="start">
+        <ion-menu-button menu="main-content" auto-hide="false">
+          <ion-icon slot="icon-only" name="menu"></ion-icon>
+        </ion-menu-button>
+      </ion-buttons>
+      <ion-menu-toggle auto-hide="false" menu="main-content">
+        <ion-button fill="clear" shape="round" slot="start">
+          <ion-icon slot="icon-only" name="menu"></ion-icon>
+        </ion-button>
+      </ion-menu-toggle>
+    </div>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content>
+
+  <ion-toolbar>
+    <div style="display: flex">
+      <ion-title class="ion-text-center">
+        <div style="font-family: 'Lobster', cursive; font-size: 30px; color: #3a1468; margin: 10px auto">
+          Cold Store <ion-icon name="storefront"></ion-icon>
+        </div>
+      </ion-title>
+      <ion-button style="margin-top: 12px;" fill="clear" shape="round" routerLink="/supplier-view" routerDirection="back">
+        <ion-icon slot="start" name="chevron-back"></ion-icon> Back
+      </ion-button>
+    </div>
+  </ion-toolbar>
+
+  <br><br>
+  <div>
+    <ion-title >Incoming Orders</ion-title><br><br>
+  </div>
+  
+  <div align="center">
+    <p style="margin-top: 10px; font-size: 15px; color: #5c13b4">Respond to incoming shipment orders</p>
+  </div>
+
+  <div *ngIf="orderArray.length == 0" align="center">
+    <br><br>
+    <h5 style="margin-top: 10px; color: #000000">No pending shipment orders found</h5>
+  </div>
+
+  <div *ngIf="hideOptions">
+    <div align="center">
+      <h5>Update Order Status</h5>
+      Item Name: {{ selectedOrder.itemName }}<br>
+      Quantity: {{ selectedOrder.quantity }}<br>
+      Order Date: {{ selectedOrder.orderDate }}<br>
+      <ion-button style="width: 55%" fill="outline" shape="round" (click)="confirmShipment()">
+        Confirm Shipment
+      </ion-button>
+      <br><br><br>
+    </div>
+  </div>
+
+  <div align="center">
+    <ion-button color="primary" style="height: 100px; width: 90%; padding: 0px" *ngFor="let order of orderArray" (click)="showOptions(order)">
+      <div align="left" style="padding: 0">
+        Item Name: {{ order.itemName }}<br>
+        Quantity: {{ order.quantity }}<br>
+        Order Date: {{ order.orderDate }}<br>
+        <br>
+      </div>
+      <ion-icon style="font-size: 35px" slot="end" name="chevron-forward-circle-outline"></ion-icon>
+    </ion-button>
+  </div>
+
+</ion-content>

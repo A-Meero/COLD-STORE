@@ -1,0 +1,89 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet"> 
+
+<!-- <ion-header class="ion-no-border">
+  <ion-toolbar>
+    <div style="display: flex">
+      <ion-title class="ion-text-center">
+        <div style="font-family: 'Lobster', cursive; font-size: 30px; color: #3a1468; margin: 10px auto">
+          Cold Store <ion-icon name="storefront"></ion-icon>
+        </div>
+      </ion-title>
+      <ion-buttons slot="start">
+        <ion-menu-button menu="main-content" auto-hide="false">
+          <ion-icon slot="icon-only" name="menu"></ion-icon>
+        </ion-menu-button>
+      </ion-buttons>
+      <ion-menu-toggle auto-hide="false" menu="main-content">
+        <ion-button fill="clear" shape="round" slot="start">
+          <ion-icon slot="icon-only" name="menu"></ion-icon>
+        </ion-button>
+      </ion-menu-toggle>
+    </div>
+  </ion-toolbar>
+</ion-header> -->
+
+
+<ion-content>
+
+  <ion-toolbar>
+    <div style="display: flex">
+      <ion-title class="ion-text-center">
+        <div style="font-family: 'Lobster', cursive; font-size: 30px; color: #3a1468; margin: 10px auto">
+          Cold Store <ion-icon name="storefront"></ion-icon>
+        </div>
+      </ion-title>
+      <ion-button style="margin-top: 12px;" fill="clear" shape="round" routerLink="/supplier-view" routerDirection="back">
+        <ion-icon slot="start" name="chevron-back"></ion-icon> Back
+      </ion-button>
+    </div>
+  </ion-toolbar>
+
+  <br><br>
+  <div>
+    <ion-title >Order History</ion-title><br><br>
+  </div>
+  
+  <div align="center">
+    <p style="margin-top: 10px; font-size: 15px; color: #5c13b4">View history of all orders</p>
+  </div>
+
+  <ion-segment [(ngModel)]="orderHistorySegment">
+    <ion-segment-button value="incompleteOrders">
+      <ion-label>Incomplete Orders</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="compOrders">
+      <ion-label>Completed Orders</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <div [ngSwitch]="orderHistorySegment">
+    <div *ngSwitchCase="'incompleteOrders'">
+      <br>
+      <ion-item *ngFor="let order of incompletedOrderArray">
+        <ion-item>
+          Item Name: {{ order.itemName }}<br>
+          Supplier Name: {{ order.supplierName }}
+          Quantity: {{ order.quantity }}<br>
+          Order Date: {{ order.orderDate }}<br>
+        </ion-item>
+        <div *ngIf="order.status == 'Pending'" style="color: crimson" slot="end">{{ order.status }}</div>
+        <div *ngIf="order.status == 'Shipped'" style="color: royalblue" slot="end">{{ order.status }}</div>
+      </ion-item>
+    </div>
+    <div *ngSwitchCase="'compOrders'">
+      <br>
+      <ion-item *ngFor="let order of completedOrderArray">
+        <ion-item>
+          Item Name: {{ order.itemName }}<br>
+          Supplier Name: {{ order.supplierName }}
+          Quantity: {{ order.quantity }}<br>
+          Order Date: {{ order.orderDate }}<br>
+        </ion-item>
+        <div style="color: green" slot="end">{{ order.status }}</div>
+      </ion-item>
+    </div>
+  </div>
+
+</ion-content>

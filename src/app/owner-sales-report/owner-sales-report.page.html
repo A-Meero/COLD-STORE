@@ -1,0 +1,72 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet"> 
+
+<!-- <ion-header class="ion-no-border">
+  <ion-toolbar>
+    <div style="display: flex">
+      <ion-title class="ion-text-center">
+        <div style="font-family: 'Lobster', cursive; font-size: 30px; color: #3a1468; margin: 10px auto">
+          Cold Store <ion-icon name="storefront"></ion-icon>
+        </div>
+      </ion-title>
+      <ion-buttons slot="start">
+        <ion-menu-button menu="main-content" auto-hide="false">
+          <ion-icon slot="icon-only" name="menu"></ion-icon>
+        </ion-menu-button>
+      </ion-buttons>
+      <ion-menu-toggle auto-hide="false" menu="main-content">
+        <ion-button fill="clear" shape="round" slot="start">
+          <ion-icon slot="icon-only" name="menu"></ion-icon>
+        </ion-button>
+      </ion-menu-toggle>
+    </div>
+  </ion-toolbar>
+</ion-header> -->
+
+
+<ion-content>
+
+  <ion-toolbar>
+    <div style="display: flex">
+      <ion-title class="ion-text-center">
+        <div style="font-family: 'Lobster', cursive; font-size: 30px; color: #3a1468; margin: 10px auto">
+          Cold Store <ion-icon name="storefront"></ion-icon>
+        </div>
+      </ion-title>
+      <ion-button style="margin-top: 12px;" fill="clear" shape="round" routerLink="/employee-view" routerDirection="back">
+        <ion-icon slot="start" name="chevron-back"></ion-icon> Back
+      </ion-button>
+    </div>
+  </ion-toolbar>
+
+  <br><br>
+  <div>
+    <ion-title >Sales Report</ion-title><br><br>
+  </div>
+  
+  <div align="center">
+    <p style="margin-top: 10px; font-size: 15px; color: #5c13b4">View all purchases made</p>
+  </div>
+
+  <br>
+  <ion-item>
+    <ion-grid>
+      <ion-row style="font-weight: bold">
+        <ion-col>Item Name</ion-col>
+        <ion-col>Quantity</ion-col>
+        <ion-col>Total Price</ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-item>
+    <ion-item button *ngFor="let sale of salesArray">
+      <ion-grid>
+        <ion-row>
+          <ion-col>{{ sale.itemName }}</ion-col>
+          <ion-col>{{ sale.quantity }}</ion-col>
+            <ion-col>{{ sale.totalPrice }}</ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+
+</ion-content>

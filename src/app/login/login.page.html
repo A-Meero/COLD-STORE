@@ -1,0 +1,90 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet"> 
+
+<!-- <ion-menu contentId="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Menu Content</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">This is the menu content.</ion-content>
+</ion-menu>
+
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <div style="display: flex">
+      <ion-title class="ion-text-center">
+        <div style="font-family: 'Lobster', cursive; font-size: 30px; color: #3a1468; margin: 10px auto">
+          Cold Store <ion-icon name="storefront"></ion-icon>
+        </div>
+      </ion-title> -->
+      <!-- <ion-buttons slot="start">
+        <ion-menu-button menu="main-content" auto-hide="false">
+          <ion-icon slot="icon-only" name="menu"></ion-icon>
+        </ion-menu-button>
+      </ion-buttons> -->
+      <!-- <ion-menu-toggle auto-hide="false" menu="main-content">
+        <ion-button fill="clear" shape="round" slot="start">
+          <ion-icon slot="icon-only" name="menu"></ion-icon>
+        </ion-button>
+      </ion-menu-toggle> -->
+      <!-- <ion-button fill="clear" shape="round" slot="start">
+        <ion-icon slot="icon-only" name="menu"></ion-icon>
+      </ion-button> -->
+    <!-- </div>
+  </ion-toolbar>
+</ion-header> -->
+
+
+
+<ion-content [fullscreen]="true">
+<!-- 
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">
+        <div align="center" style="font-family: 'Oswald', sans-serif; font-size: 30px">
+          Cold Store <ion-icon name="storefront"></ion-icon>
+        </div>
+      </ion-title>
+    </ion-toolbar>
+  </ion-header> -->
+
+  <br>
+  <div>
+    <ion-title class="ion-text-center" onload='checkUser()'>
+      <div style="font-family: 'Lobster', cursive; font-size: 30px; color: #3a1468" onload="checkUser()">
+        Cold Store <ion-icon name="storefront"></ion-icon>
+      </div>
+    </ion-title>
+  </div>
+
+  <div id="container">
+    <div align="center">
+      <ion-title style="font-size: 20px; font-weight: bold;">Welcome Back!</ion-title>
+      <br>
+      <p style="margin-top: 10px; font-size: 15px; color: #5c13b4">Sign back into your account</p>
+      <br><br>
+
+      <ion-item style="width: 70%; font-size: 17px;" lines="none">
+        <ion-icon size="large" color="primary" slot="start" name="person-circle-outline" style="padding-right: 20px; border-right: 1px solid"></ion-icon>
+        <ion-label position="floating" style="margin: auto 0px">Username</ion-label>
+        <ion-input type="text" placeholder="Username" [(ngModel)]="username" ></ion-input>
+      </ion-item>
+      
+      <ion-item style="width: 70%; font-size: 17px;" lines="none">
+        <ion-icon size="large" color="primary" slot="start" name="lock-closed-outline" style="padding-right: 20px; border-right: 1px solid"></ion-icon>
+        <ion-label position="floating">Password</ion-label>
+        <ion-input type="password" placeholder="Password" [(ngModel)]="password" ></ion-input>
+      </ion-item>
+
+      <br>
+      <ion-button style="width: 65%" shape="round" (click)="SignIn()">
+        Sign In
+      </ion-button>
+
+      <br><br>
+    </div>
+
+  </div>
+</ion-content>

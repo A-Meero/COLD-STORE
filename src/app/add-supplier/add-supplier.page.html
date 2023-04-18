@@ -1,0 +1,86 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet"> 
+
+<!-- <ion-header class="ion-no-border">
+  <ion-toolbar>
+    <div style="display: flex">
+      <ion-title class="ion-text-center">
+        <div style="font-family: 'Lobster', cursive; font-size: 30px; color: #3a1468; margin: 10px auto">
+          Cold Store <ion-icon name="storefront"></ion-icon>
+        </div>
+      </ion-title>
+      <ion-buttons slot="start">
+        <ion-menu-button menu="main-content" auto-hide="false">
+          <ion-icon slot="icon-only" name="menu"></ion-icon>
+        </ion-menu-button>
+      </ion-buttons>
+      <ion-menu-toggle auto-hide="false" menu="main-content">
+        <ion-button fill="clear" shape="round" slot="start">
+          <ion-icon slot="icon-only" name="menu"></ion-icon>
+        </ion-button>
+      </ion-menu-toggle>
+    </div>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content>
+
+  <ion-toolbar>
+    <div style="display: flex">
+      <ion-title class="ion-text-center">
+        <div style="font-family: 'Lobster', cursive; font-size: 30px; color: #3a1468; margin: 10px auto">
+          Cold Store <ion-icon name="storefront"></ion-icon>
+        </div>
+      </ion-title>
+      <ion-button style="margin-top: 12px;" fill="clear" shape="round" routerLink="/owner-view" routerDirection="back">
+        <ion-icon slot="start" name="chevron-back"></ion-icon> Back
+      </ion-button>
+    </div>
+  </ion-toolbar>
+
+  <br><br>
+  <div>
+    <ion-title >Add Supplier</ion-title><br><br>
+  </div>
+  <div align="center">
+    <p style="margin-top: 10px; font-size: 15px; color: #5c13b4">Add a new Supplier</p>
+  </div>
+
+  <div style="width: 80%; margin: auto">
+    <ion-item>
+      <ion-label position="floating">Supplier Name:</ion-label>
+      <ion-input type="text" placeholder="Supplier Name" [(ngModel)]="supplierName" ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Supplier Email:</ion-label>
+      <ion-input type="email" placeholder="Supplier Email" [(ngModel)]="newEmail"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Supplier Password:</ion-label>
+      <ion-input type="password" placeholder="Supplier Password" [(ngModel)]="newPassword"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Confirm Password:</ion-label>
+      <ion-input type="password" placeholder="Confirm Password" [(ngModel)]="conPassword"></ion-input>
+    </ion-item>
+    <br>
+    <ion-button expand="block" fill="outline" shape="round" (click)="signUp()">
+      Register Supplier
+    </ion-button>
+  </div>
+
+
+<!-- 
+  <div align="center">
+    <ion-grid fixed>
+      <ion-row>
+        <ion-col size="4">Day</ion-col>
+        <ion-col size="4">Shift</ion-col>
+        <ion-col size="4"></ion-col>
+      </ion-row>
+    </ion-grid>
+  </div> -->
+
+
+</ion-content>

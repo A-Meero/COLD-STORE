@@ -1,0 +1,135 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet"> 
+
+<!-- <ion-header class="ion-no-border">
+  <ion-toolbar>
+    <div style="display: flex">
+      <ion-title class="ion-text-center">
+        <div style="font-family: 'Lobster', cursive; font-size: 30px; color: #3a1468; margin: 10px auto">
+          Cold Store <ion-icon name="storefront"></ion-icon>
+        </div>
+      </ion-title>
+      <ion-buttons slot="start">
+        <ion-menu-button menu="main-content" auto-hide="false">
+          <ion-icon slot="icon-only" name="menu"></ion-icon>
+        </ion-menu-button>
+      </ion-buttons>
+      <ion-menu-toggle auto-hide="false" menu="main-content">
+        <ion-button fill="clear" shape="round" slot="start">
+          <ion-icon slot="icon-only" name="menu"></ion-icon>
+        </ion-button>
+      </ion-menu-toggle>
+    </div>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content>
+
+  <ion-toolbar>
+    <div style="display: flex">
+      <ion-title class="ion-text-center">
+        <div style="font-family: 'Lobster', cursive; font-size: 30px; color: #3a1468; margin: 10px auto">
+          Cold Store <ion-icon name="storefront"></ion-icon>
+        </div>
+      </ion-title>
+      <ion-button style="margin-top: 12px;" fill="clear" shape="round" routerLink="/owner-view" routerDirection="back">
+        <ion-icon slot="start" name="chevron-back"></ion-icon> Back
+      </ion-button>
+    </div>
+  </ion-toolbar>
+
+  <br><br>
+  <div style="display: flex">
+    <ion-title>View Item</ion-title>
+    <div>
+
+    </div>
+  </div>
+  <div align="center">
+    <p style="margin-top: 40px; font-size: 15px; color: #5c13b4">View Item List</p>
+  </div>
+ 
+  
+    <ion-label>Filter By:</ion-label>
+    <ion-item>
+    <ion-label>Supplier:</ion-label>
+    <ion-item>
+      <ion-select slot="end" interface="popover" placeholder="list of suppliers" [(ngModel)]="supplier">
+        <span *ngFor="let item of FB.suppliers  | async">
+        <ion-select-option >{{item.name}}</ion-select-option>
+      </span>
+      </ion-select>
+    </ion-item>
+    </ion-item>
+    <ion-item>
+      <ion-label>Category:</ion-label>
+      <ion-item>
+        <ion-select slot="end" interface="popover" placeholder="list of categoriess" [(ngModel)]="category">
+          <ion-select-option value="Snacks">Snacks</ion-select-option>
+          <ion-select-option value="Sweets">Sweets</ion-select-option>
+          <ion-select-option value="Drink">Drink</ion-select-option>
+        </ion-select>
+      </ion-item>
+      </ion-item>
+      <ion-item>
+        <ion-label>Selling:</ion-label>
+        <ion-item>
+          <ion-select slot="end" interface="popover" placeholder="selling" [(ngModel)]="selling">
+            <ion-select-option value="Fast Moving">Fast Moving</ion-select-option>
+            <ion-select-option value="Slow Moving">Slow Moving</ion-select-option>
+          </ion-select>
+        </ion-item>
+        </ion-item>
+        <br><ion-title>LIST OF ITEMS</ion-title><br><br>
+        <ion-item>
+          <ion-label>Name</ion-label>
+          <ion-label>Supplier</ion-label>
+        </ion-item>
+    <span *ngFor="let item of FB.items  | async">
+      <span *ngIf="(item.supplier == supplier || !supplier) && (item.category == category || !category) && (item.moving == selling || !selling)">
+      <ion-item-sliding>
+        <ion-item button (click)="showitemAlert(item)">
+          <ion-label>{{item.name}}</ion-label>
+          <ion-label>{{item.supplier}}</ion-label>
+        </ion-item>
+        <ion-item-options side="end">
+          <ion-button color="danger" (click)="DeleteItem(item.id)">Delete</ion-button>
+        </ion-item-options>
+        <ion-item-options side="start">
+          <ion-button color="warning" (click)="editItem(item)">Edit</ion-button>
+        </ion-item-options>
+        </ion-item-sliding>
+      </span>
+    </span>
+    <div *ngIf="hideOptions">
+      <div align="center">
+        <ion-item>
+          <ion-label position="floating">Item moving :</ion-label>
+        <ion-item>
+          <ion-select slot="end" interface="popover" placeholder="moving" [(ngModel)]="newMoving">
+            <ion-select-option value="Fast Moving">Fast Moving</ion-select-option>
+            <ion-select-option value="Slow Moving">Slow Moving</ion-select-option>
+          </ion-select>
+          </ion-item>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Item Price :</ion-label>
+          <ion-input type="number" placeholder="price" [(ngModel)]="newPrice"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Item Threshhold (Max. stock) :</ion-label>
+          <ion-input type="number"  [(ngModel)]="newThreshhold"></ion-input>
+        </ion-item>
+        <ion-button style="width: 55%" fill="outline" shape="round" (click)="update()">
+          Update Item
+        </ion-button>
+      </div>
+    </div>
+
+    
+
+
+
+</ion-content>
+

@@ -1,0 +1,105 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet"> 
+
+<!-- <ion-header class="ion-no-border">
+  <ion-toolbar>
+    <div style="display: flex">
+      <ion-title class="ion-text-center">
+        <div style="font-family: 'Lobster', cursive; font-size: 30px; color: #3a1468; margin: 10px auto">
+          Cold Store <ion-icon name="storefront"></ion-icon>
+        </div>
+      </ion-title>
+      <ion-buttons slot="start">
+        <ion-menu-button menu="main-content" auto-hide="false">
+          <ion-icon slot="icon-only" name="menu"></ion-icon>
+        </ion-menu-button>
+      </ion-buttons>
+      <ion-menu-toggle auto-hide="false" menu="main-content">
+        <ion-button fill="clear" shape="round" slot="start">
+          <ion-icon slot="icon-only" name="menu"></ion-icon>
+        </ion-button>
+      </ion-menu-toggle>
+    </div>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content>
+
+  <ion-toolbar>
+    <div style="display: flex">
+      <ion-title class="ion-text-center">
+        <div style="font-family: 'Lobster', cursive; font-size: 30px; color: #3a1468; margin: 10px auto">
+          Cold Store <ion-icon name="storefront"></ion-icon>
+        </div>
+      </ion-title>
+      <ion-button style="margin-top: 12px;" fill="clear" shape="round" routerLink="/employee-view" routerDirection="back">
+        <ion-icon slot="start" name="chevron-back"></ion-icon> Back
+      </ion-button>
+    </div>
+  </ion-toolbar>
+
+  <br><br>
+  <div style="display: flex">
+    <ion-title style="margin-top: 8px">View Stock</ion-title>
+
+  </div>
+  <div align="center">
+    <p style="margin-top: 43px; font-size: 15px; color: #5c13b4">View Item Stocks</p>
+  </div>
+ 
+  
+    <ion-label>Filter By:</ion-label>
+    <ion-item>
+    <ion-label>Supplier:</ion-label>
+    <ion-item>
+      <ion-select slot="end" interface="popover" placeholder="list of suppliers" [(ngModel)]="supplier">
+        <span *ngFor="let item of FB.suppliers  | async">
+        <ion-select-option >{{item.name}}</ion-select-option>
+      </span>
+      </ion-select>
+    </ion-item>
+    </ion-item>
+    <ion-item>
+      <ion-label>Category:</ion-label>
+      <ion-item>
+        <ion-select slot="end" interface="popover" placeholder="list of categoriess" [(ngModel)]="category">
+          <ion-select-option value="Snacks">Snacks</ion-select-option>
+          <ion-select-option value="Sweets">Sweets</ion-select-option>
+          <ion-select-option value="Drink">Drink</ion-select-option>
+        </ion-select>
+      </ion-item>
+      </ion-item>
+      <ion-item>
+        <ion-label>Selling:</ion-label>
+        <ion-item>
+          <ion-select slot="end" interface="popover" placeholder="selling" [(ngModel)]="selling">
+            <ion-select-option value="Fast Moving">Fast Moving</ion-select-option>
+            <ion-select-option value="Slow Moving">Slow Moving</ion-select-option>
+          </ion-select>
+        </ion-item>
+        </ion-item>
+        <ion-item>
+          <ion-label>Low Stock:</ion-label>
+          <ion-item>
+            <ion-select slot="end" interface="popover" placeholder="stock" [(ngModel)]="stock">
+              <ion-select-option value="5">Lower than 5</ion-select-option>
+              <ion-select-option value="10">Lower than 10</ion-select-option>
+              <ion-select-option value="15">Lower than 15</ion-select-option>
+            </ion-select>
+          </ion-item>
+          </ion-item>
+        <br><ion-title>LIST OF ITEMS</ion-title><br><br>
+        <ion-item>
+          <ion-label>Name</ion-label>
+          <ion-label>Stock</ion-label>
+        </ion-item>
+    <span *ngFor="let item of FB.items  | async">
+      <span *ngIf="(item.supplier == supplier || !supplier) && (item.category == category || !category) && (item.moving == selling || !selling) && (stock > item.stock || !stock)">
+        <ion-item button (click)="showitemAlert(item)">
+          <ion-label>{{item.name}}</ion-label>
+          <ion-label>{{item.stock}}</ion-label>
+        </ion-item>
+      </span>
+    </span>
+  </ion-content>

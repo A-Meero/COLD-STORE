@@ -1,0 +1,78 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet"> 
+
+<!-- <ion-header class="ion-no-border">
+  <ion-toolbar>
+    <div style="display: flex">
+      <ion-title class="ion-text-center">
+        <div style="font-family: 'Lobster', cursive; font-size: 30px; color: #3a1468; margin: 10px auto">
+          Cold Store <ion-icon name="storefront"></ion-icon>
+        </div>
+      </ion-title>
+      <ion-buttons slot="start">
+        <ion-menu-button menu="main-content" auto-hide="false">
+          <ion-icon slot="icon-only" name="menu"></ion-icon>
+        </ion-menu-button>
+      </ion-buttons>
+      <ion-menu-toggle auto-hide="false" menu="main-content">
+        <ion-button fill="clear" shape="round" slot="start">
+          <ion-icon slot="icon-only" name="menu"></ion-icon>
+        </ion-button>
+      </ion-menu-toggle>
+    </div>
+  </ion-toolbar>
+</ion-header> -->
+
+
+<ion-content>
+
+  <ion-toolbar>
+    <div style="display: flex">
+      <ion-title class="ion-text-center">
+        <div style="font-family: 'Lobster', cursive; font-size: 30px; color: #3a1468; margin: 10px auto">
+          Cold Store <ion-icon name="storefront"></ion-icon>
+        </div>
+      </ion-title>
+      <ion-button style="margin-top: 12px;" fill="clear" shape="round" routerLink="/employee-view" routerDirection="back">
+        <ion-icon slot="start" name="chevron-back"></ion-icon> Back
+      </ion-button>
+    </div>
+  </ion-toolbar>
+
+  <br><br>
+  <div>
+    <ion-title >Report Sale</ion-title><br><br>
+  </div>
+  
+  <div align="center">
+    <p style="margin-top: 10px; font-size: 15px; color: #5c13b4">Report a customer purchase</p>
+  </div>
+
+  <br>
+      <div style="width: 80%; margin: auto">
+        <ion-item>
+          <ion-label>Item Name:</ion-label>
+          <ion-select interface="popover" placeholder="Item" [(ngModel)]="selectedItem">
+            <ion-select-option [value]="item" *ngFor="let item of FB.items | async" >{{ item.name }}</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label>Unit Price:</ion-label>
+          <ion-label slot="end">{{ selectedItem.price }}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Sale Quantity:</ion-label>
+          <ion-input type="number" placeholder="Sale Quantity" [(ngModel)]="saleQty"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Total Price:</ion-label>
+          <ion-label slot="end">{{ saleQty*selectedItem.price }}  BD</ion-label>
+        </ion-item>
+        <br><br>
+        <ion-button expand="block" fill="outline" shape="round" (click)="reportSale()">
+          Report Sale
+        </ion-button>
+      </div>
+
+</ion-content>

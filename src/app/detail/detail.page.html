@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar color="warning">
+    <ion-title>Detail</ion-title>
+    <ion-button fill="clear" [routerLink]="['/']">
+      <ion-icon color="dark" name="chevron-back-outline"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div>
+    <h2 class="ion-text-center">{{data.List[id].Name}}</h2>
+    <p>{{data.List[id].Info}}</p>
+    <ion-img src="../../assets/images/{{data.List[id].Image}}"></ion-img>
+    <ion-button fill="outline" color="danger" style="width:100% ;" [routerLink]="['/']">CLOSE</ion-button>
+  </div>
+</ion-content>
