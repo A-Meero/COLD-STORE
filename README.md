@@ -28,6 +28,24 @@ The cold-store app open-source project on GitHub is a free software application 
 7. As an accountant working for a business that uses the cold-store app, I want to be able to integrate the app with our accounting software, so that I can easily manage inventory and financial data in one place.
 8. As an e-commerce business owner, I want to be able to integrate the cold-store app with my e-commerce platform, so that I can manage inventory and fulfill orders more efficiently.
 
+## Development status:
+The cold-store app project on GitHub is currently in a demo phase, where a limited version of the application is available for testing and feedback. The app includes basic inventory management, real-time temperature monitoring, and batch management features, with a user-friendly interface and compatibility with various devices and systems. The development team is seeking feedback to improve the app's functionality and usability, which will be used to refine the app's features and prioritize development efforts. The demo phase is an important step in the development process, allowing the team to gather valuable insights before releasing the app to the public, and the project is progressing towards its goal of providing a robust and flexible tool for managing cold storage and display units in supermarkets.
+
+
+## Downloads:
+1. Node.js: This is a JavaScript runtime environment that is required to run the Ionic development environment. You can download Node.js from the official website: https://nodejs.org/en/download/
+
+2. Ionic CLI: The Ionic command-line interface is used to create, build, and run Ionic projects. You can install it by running the following command in your terminal or command prompt: npm install -g ionic
+
+3. Firebase CLI: The Firebase command-line interface is used to interact with Firebase services from the command line. You can install it by running the following command in your terminal or command prompt: npm install -g firebase-tools
+
+4. Git: Git is a version control system that allows you to track changes to your code and collaborate with others. You can download Git from the official website: https://git-scm.com/downloads
+
+5. Code editor: A code editor is required to write and edit code for your Ionic project. You can use any code editor of your choice, such as Visual Studio Code, Sublime Text.
+
+7. Firebase account: You will need a Firebase account to use Firebase services in your Ionic project. You can sign up for a free account on the Firebase website: https://firebase.google.com/
+
+
 ## Functions and Screenshots
 The app allows three types of users, each with varying levels of authority and functions:
 
