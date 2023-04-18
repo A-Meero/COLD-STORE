@@ -217,6 +217,6 @@ HTML&CSS so if you want to contribute to the html page of code you are welcomed
 Front end JavaScript to contribute in making the project pages more interactive  
 Note that any other developer can contribute to the code if he/she can show us a way to improve the project in a way we did not think of, so the developer should write in the discussion page about his/her idea or tool and the team will discuss their solution with them.
 
-#### What is the programming languages used in the project ? 
+#### What are the programming languages used in the project ? 
 Html ,CSS , Typescript, JavaScript
 
