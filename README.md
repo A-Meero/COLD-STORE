@@ -1,5 +1,8 @@
 # Coldstore App
-The cold-store app open-source project on GitHub is a free software application that allows businesses to manage their cold storage facilities. It provides users with an intuitive interface for managing inventory, monitoring storage conditions, and generating reports. The project is open-source, which means that anyone can contribute to its development, and users are free to modify and customize the code to meet their specific needs.
+The cold-store app open-source project on GitHub is a free software application that allows businesses to manage their cold storage facilities. It provides users with an intuitive interface for managing inventory, monitoring storage conditions, and generating reports. 
+
+### Note:  
+The project is **open-source**, which means that anyone can contribute to its development, and users are free to modify and customize the code to meet their specific needs.
 
 ## Functional requirements:
 
@@ -139,4 +142,81 @@ The store's suppliers are limited to viewing order history and responding to inc
 
 ![image](https://user-images.githubusercontent.com/59618797/215785836-2f204b94-5a35-4c64-bad3-024027cd7e69.png)
 
-#HiHiHiHiHiHiHi
+## Codes of Conduct
+To guide those who wish to participate in our open-source project "Cold store", we have added a code of conduct. It is possible to report unwanted behavior. Our group is dedicated to creating a warm and motivating environment for everyone, and we expect everyone to maintain the Code of Conduct. In addition, violators of our open-source code of conduct will be punished which could lead to a ban from the project.
+.
+.
+.
+### A guide to participating in the "Cold Store" project
+
+#### Our pledge
+-	With the open-source project "Cold Store", regardless of gender identification, we promise to keep community participation abuse-free for everyone..
+-	Throughout our work and interactions, we pledge to contribute to a welcoming environment.
+-	Our commitment is to accept responsibility, apologize to those affected by our mistakes, and learn from them.
+
+
+
+#### Our standards
+Among the behaviors that contribute to a positive community environment are:
+
+##### -	Be friendly and patient.
+Be Welcome: We strive to create a community that is inclusive of all backgrounds and identities. It includes individuals of all races, socioeconomic classes, educational levels, genders, gender identities, ages, political beliefs, religions, etc.
+
+##### -	Respect different opinions and experiences.
+Be respectful: We won't always agree, but disagreement isn't an excuse for misbehavior. There will be times when we feel frustrated, but we shouldn't let that frustration turn into a personal attack. In order for society to be productive, people must not feel uncomfortable or threatened.
+Try to understand the reason for the difference: There are always social and technical disagreements. The key to resolving differences and contrasting viewpoints is to resolve them constructively. Keep in mind that we are all different. It does not mean that someone is wrong if you do not understand why they hold a particular viewpoint. Instead, focus on solving problems and learning from them.
+
+##### -	Be kind to others.
+Choose your words carefully: Kindness to others is important. Be respectful of other participants and do not insult them. Exclusionary behavior and harassment are not acceptable.
+
+
+**Unacceptable behavior includes:**
+-	The use of sexual language or images.
+-	A personal attack or derogatory remarks.
+-	Harassment in public or private.
+-	If you post someone else's private information, such as an email address or physical address, without their permission, you will be breaking the code of conduct.
+
+#### Enforcement responsibilities
+Community leaders are accountable for clarifying and enforcing the rules of acceptable behavior and will take appropriate and fair action if any inappropriate behavior is observed.
+Comments, commitments, code, wiki edits, issues, and other contributions that violate the Code of Conduct must be removed, edited, or rejected by community leaders.
+
+#### Enforcement
+It is possible to report abusive, harassing, or otherwise unacceptable behavior to community leaders who are responsible for enforcing the code. There will be a prompt and fair review and investigation of all complaints.
+The community's leaders are obligated to respect reporters' privacy and security.
+
+#### Enforcement Guidelines
+In determining the consequences of any action, they consider to be in violation of this Code of Conduct, community leaders will follow these Community Impact Guidelines:
+
+1.	Correction:  
+Impact on the community: Behavior that is deemed inappropriate or unwelcome by the community, such as inappropriate language.  
+Consequences: Warning from community leaders outlining the nature of the violation and explaining why the behavior was inappropriate. There may be a need for a public apology.
+2.	Warning:  
+Impact on the community: Violations resulting from a single incident or a series of incidents.  
+Consequences: A warning about the consequences of continuing the behavior. Interactions with individuals are not allowed. The violation of these terms may result in a temporary ban.
+3.	Temporary ban:  
+Impact on the community: There is a serious violation of community norms, such as persistent inappropriate behavior.  
+Consequences: Temporary restrictions on public interaction or communication with the community. There may be no communication with the individuals in question in public or privately. A ban might be imposed permanently for violations of these rules.
+4.	Permanent ban:  
+ Impact on the community: Demonstrates a pattern of transgressing social norms, such as persistently inappropriate behavior, or criticizing or ridiculing groups of people.  
+Consequence: A permanent ban on all forms of communal interaction with the public.
+
+#### Scope
+An individual is required to adhere to this Code of Conduct when representing the community in public and in all community settings. In addition to using an official email address, posting via an official social media account, or serving as a designated representative at an event, you can also represent our community using an official email address.
+
+## FAQ
+#### Is the project completely open source? 
+Yes, the project is completely open-source, and you can download the code of the software and use it or even join the project and contribute to it . 
+
+#### What is the bar limit for someone to contribute in the project ?
+Everyone can join the project and it is not restricted to only developers as even marketers can join and try to market the software in social media for example, so whatever the field you are into don’t be shy just enter the discussion page of the project and write to us about your skills and we will be happy to discuss with you how to contribute to the project in a way that is suitable with you.
+
+#### What type of developer can contribute to the code? 
+Any developer can contribute  in the following  field of code: 
+The Typescript part, as most of the project is built using it  
+HTML&CSS so if you want to contribute to the html page of code you are welcomed  
+Front end JavaScript to contribute in making the project pages more interactive  
+Note that any other developer can contribute to the code if he/she can show us a way to improve the project in a way we did not think of, so the developer should write in the discussion page about his/her idea or tool and the team will discuss their solution with them.
+
+#### What is the programming languages used in the project ? 
+Html ,CSS , Typescript, JavaScript
+
