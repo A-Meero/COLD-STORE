@@ -4,6 +4,28 @@ The cold-store app open-source project on GitHub is a free software application 
 ### Note:  
 The project is **open-source**, which means that anyone can contribute to its development, and users are free to modify and customize the code to meet their specific needs.
 
+## Development instructions:
+- to run the app use:-  ionic serve
+- Set up your development environment: Before you start working on your project, make sure you have all the necessary tools and dependencies installed on your machine. This includes things like Node.js, Ionic CLI, and any other libraries or frameworks you plan to use.
+
+- Define the scope of your project: Determine what features and functionality you want to include in your project, and create a roadmap or project plan to guide your development efforts.
+
+- Use version control: Use a version control system like Git to manage your codebase. This will help you keep track of changes, collaborate with others, and revert to previous versions if needed.
+
+- Write clean, maintainable code: Follow best practices for coding, such as writing modular, reusable code, using clear and descriptive variable names, and commenting your code to make it easier to understand.
+
+- Test your code: Write automated tests to ensure that your code is functioning as expected. This includes unit tests to test individual components of your code, and integration tests to test how different parts of your code work together.
+
+- Document your code: Write documentation that explains how your code works, including API references, installation instructions, and usage examples. This will make it easier for others to understand and use your code.
+
+- Contribute to the community: Participate in the open-source community by contributing to other projects, answering questions on forums orstack overflow, and sharing your own code and knowledge with others. This can help you build relationships, gain recognition, and improve your own skills and knowledge.
+
+- Follow security best practices: Ensure that your code is secure by following industry best practices for security, such as using encryption, avoiding hardcoded secrets, and implementing user authentication and authorization.
+
+- Optimize performance: Optimize your code for performance by minimizing code bloat, using caching, and implementing lazy loading where possible. This will help your app run faster and more smoothly for your users.
+
+- Continuously improve: Continuously improve your code by incorporating feedback from users and contributors, fixing bugs and issues, and adding new features and functionality. This will help keep your project relevant and valuable to your users.
+
 ## Functional requirements:
 
 - Inventory management functionality to track product names, quantities, and expiration dates
