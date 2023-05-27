@@ -141,6 +141,10 @@ Step 3: Update and Resolve Issues: Update the status of the issue as it progress
 
 Step 4: Notify Team Members: GitHub provides notification features that allow team members to receive notifications about changes and updates to issues. Make sure team members are subscribed to relevant issues to stay updated.
 
+Note:
+- If the bug has been updated please change the label of the issue
+- If the bug has been resolved, please go to the issue and scroll down to the bottom of the page and click on resolve (include ny comments if needed then click resolve with comment)
+- If the bug has occured again, please go to the issue and reopen it.
 
 
 - Staff Homepage
