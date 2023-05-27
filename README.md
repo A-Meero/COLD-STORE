@@ -131,6 +131,8 @@ Push Changes: Use the following command to push   local changes to the remote re
 
 ## Bug Tracking:
 
+(Please refer back to the template .bug_report.md in order to create/notify team members about the bug)
+
 Step 1: Create an Issue: In GitHub repository, go to the "Issues" tab and click on "New issue" to create a new issue for a bug or task.
 
 Step 2: Assign and Collaborate: Assign the issue to a team member responsible for fixing the bug or completing the task. Team members can collaborate by adding comments, attaching files, and discussing the issue on GitHub.
