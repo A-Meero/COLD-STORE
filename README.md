@@ -131,7 +131,7 @@ Push Changes: Use the following command to push   local changes to the remote re
 
 ## Bug Tracking:
 
-(Please refer back to the template .bug_report.md in order to create/notify team members about the bug)
+(Please refer back to the template .bug_report_template.md in order to create/notify team members about the bug)
 
 Step 1: Create an Issue: In GitHub repository, go to the "Issues" tab and click on "New issue" to create a new issue for a bug or task.
 
